@@ -102,8 +102,6 @@ class Bank {
         }
     }
 
-    // ---------- Lookup / display ----------
-
     public Account findAccount(String number)
             throws AccountNotFoundException {
 
@@ -135,8 +133,6 @@ class Bank {
             );
         }
     }
-
-    // ---------- Creating accounts ----------
 
     public void createAccount(Scanner sc) {
         System.out.print("Account number: ");
@@ -235,13 +231,6 @@ class Bank {
         }
     }
 
-    // ---------- Saving changes back to the database ----------
-
-    /**
-     * Call this after any operation that changes an account
-     * (deposit, withdraw, transfer, PIN change, lock/unlock,
-     * monthly update, etc.) so the database stays in sync.
-     */
     public void saveAccount(Account account) {
         String sql = "UPDATE accounts SET pin = ?, name = ?, balance = ?, " +
             "locked = ?, failed_attempts = ?, interest_rate = ?, daily_limit = ?, " +
