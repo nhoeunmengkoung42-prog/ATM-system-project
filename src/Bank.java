@@ -42,6 +42,8 @@ class Bank {
         }
     }
 
+    
+
     private Account buildAccountFromRow(ResultSet rs) throws SQLException {
         String number = rs.getString("account_number");
         String pin = rs.getString("pin");
