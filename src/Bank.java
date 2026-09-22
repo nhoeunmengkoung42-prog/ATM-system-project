@@ -7,13 +7,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- * Bank now talks to PostgreSQL instead of keeping accounts only in
- * memory. `accounts` below is an in-memory cache that mirrors the
- * "accounts" table: it's loaded once at startup (loadAccounts) and
- * kept in sync by calling saveAccount(...) after anything changes
- * an account (deposit, withdraw, PIN change, lock/unlock, etc).
- */
 class Bank {
     private ArrayList<Account> accounts = new ArrayList<>();
     private Connection connection;
@@ -31,8 +24,6 @@ class Bank {
 
         loadAccounts();
     }
-
-    // ---------- Loading from the database ----------
 
     private void loadAccounts() {
         String sql = "SELECT * FROM accounts";
@@ -156,7 +147,6 @@ class Bank {
             System.out.println("An account with that number already exists.");
             return;
         } catch (AccountNotFoundException e) {
-            // good - number is free
         }
 
         System.out.print("Name: ");
@@ -198,12 +188,6 @@ class Bank {
         }
     }
 
-    /**
-     * Creates an account that was already built elsewhere (e.g. by the
-     * ATM's "Create Customer Account" flow), inserting it into the same
-     * "accounts" table and in-memory list used everywhere else, so it's
-     * immediately findable via findAccount()/customer login.
-     */
     public boolean createAccount(Account account) {
         if (insertAccount(account)) {
             accounts.add(account);
@@ -293,12 +277,6 @@ class Bank {
         }
     }
 
-    /**
-     * Persists the most recent transaction recorded on this account
-     * (the last entry in account.getTransactions()) into the
-     * transactions table. Call this right after an operation that
-     * adds exactly one new transaction to the account.
-     */
     public void saveLatestTransaction(Account account) {
         ArrayList<Transaction> txns = account.getTransactions();
 

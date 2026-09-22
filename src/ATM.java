@@ -54,10 +54,6 @@ class ATM {
         }
     }
 
-    // =========================================================
-    // CREATE ACCOUNT MENU
-    // =========================================================
-
     private void createAccountMenu() {
 
         while (true) {
@@ -88,10 +84,6 @@ class ATM {
             }
         }
     }
-
-    // =========================================================
-    // CREATE CUSTOMER ACCOUNT
-    // =========================================================
 
     private void createCustomerAccount() {
 
@@ -172,10 +164,6 @@ class ATM {
         }
     }
 
-    // =========================================================
-    // CREATE ADMIN ACCOUNT
-    // =========================================================
-
     private void createAdminAccount() {
 
         System.out.println("\n========== CREATE ADMIN ACCOUNT ==========");
@@ -226,10 +214,6 @@ class ATM {
         }
     }
 
-    // =========================================================
-    // CUSTOMER LOGIN
-    // =========================================================
-
     private void customerLogin() {
 
         System.out.print("Account number: ");
@@ -270,11 +254,6 @@ class ATM {
 
             System.out.println("Error: " + e.getMessage());
         }
-    }
-
-    // =========================================================
-    // CUSTOMER MENU
-    // =========================================================
 
     private void customerMenu(Account account) {
 
@@ -401,10 +380,6 @@ class ATM {
         }
     }
 
-    // =========================================================
-    // TRANSFER
-    // =========================================================
-
     private void transfer(Account sender) {
 
         System.out.print("Receiver account number: ");
@@ -449,10 +424,6 @@ class ATM {
         }
     }
 
-    // =========================================================
-    // ADMIN LOGIN
-    // =========================================================
-
     private void adminLogin() {
 
         System.out.println("\n========== ADMIN LOGIN ==========");
@@ -489,10 +460,6 @@ class ATM {
             System.out.println(e.getMessage());
         }
     }
-
-    // =========================================================
-    // ADMIN MENU
-    // =========================================================
 
     private void adminMenu() {
 
@@ -539,10 +506,6 @@ class ATM {
             }
         }
     }
-
-    // =========================================================
-    // UNLOCK ACCOUNT
-    // =========================================================
 
     private void unlockAccount() {
 

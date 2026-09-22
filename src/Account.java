@@ -51,21 +51,11 @@ abstract class Account {
         return transactions;
     }
 
-    /**
-     * Restores locked/failedAttempts state when an account is loaded
-     * back from the database. Not for normal use during a session.
-     */
     public void restoreState(int failedAttempts, boolean locked) {
         this.failedAttempts = failedAttempts;
         this.locked = locked;
     }
 
-    /**
-     * Re-adds a transaction that already happened (loaded from the
-     * database), keeping its original timestamp instead of "now".
-     * Does not touch the balance, since the balance loaded from the
-     * database is already correct.
-     */
     public void loadPastTransaction(String type, double amount,
                                      double balanceAfter, LocalDateTime date) {
         transactions.add(new Transaction(type, amount, balanceAfter, date));
@@ -275,7 +265,6 @@ class CheckingAccount extends Account {
         return lastWithdrawDate;
     }
 
-    /** Restores today's withdrawal tracking when loaded from the database. */
     public void restoreDailyState(double withdrawnToday, LocalDate lastWithdrawDate) {
         this.withdrawnToday = withdrawnToday;
         this.lastWithdrawDate = (lastWithdrawDate != null)

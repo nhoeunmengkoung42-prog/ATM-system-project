@@ -1,6 +1,3 @@
-// Plain data-holder classes, combined into one file.
-// No logic was changed - only merged together.
-
 import java.time.LocalDateTime;
 
 class Customer {

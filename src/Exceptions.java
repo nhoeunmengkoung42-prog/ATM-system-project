@@ -1,6 +1,3 @@
-// All custom exceptions used by the ATM system, combined into one file.
-// Each class keeps its original behavior exactly as before.
-
 class AccountNotFoundException extends Exception {
     public AccountNotFoundException(String message) {
         super(message);
