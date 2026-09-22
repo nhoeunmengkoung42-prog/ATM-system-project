@@ -25,6 +25,8 @@ class Bank {
         loadAccounts();
     }
 
+    
+
     private void loadAccounts() {
         String sql = "SELECT * FROM accounts";
 
