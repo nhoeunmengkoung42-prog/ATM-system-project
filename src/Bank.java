@@ -122,6 +122,8 @@ class Bank {
             return;
         }
 
+
+        
         for (Account account : accounts) {
             System.out.printf(
                 "Account: %s | Name: %s | Type: %s | Balance: $%.2f | Locked: %s%n",
