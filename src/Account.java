@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 // Account and its two subclasses, combined into one file.
 // No logic was changed - only merged together.
+=======
+
+>>>>>>> SanMakara
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -11,9 +15,17 @@ abstract class Account {
     private String name;
     private double balance;
 
+<<<<<<< HEAD
     private int failedAttempts = 0;
     private boolean locked = false;
 
+=======
+
+    private int failedAttempts = 0;
+    private boolean locked = false;
+
+    
+>>>>>>> SanMakara
     private ArrayList<Transaction> transactions = new ArrayList<>();
 
     public Account(String accountNumber, String pin,
@@ -52,21 +64,27 @@ abstract class Account {
         return transactions;
     }
 
+<<<<<<< HEAD
     /**
      * Restores locked/failedAttempts state when an account is loaded
      * back from the database. Not for normal use during a session.
      */
+=======
+>>>>>>> SanMakara
     public void restoreState(int failedAttempts, boolean locked) {
         this.failedAttempts = failedAttempts;
         this.locked = locked;
     }
 
+<<<<<<< HEAD
     /**
      * Re-adds a transaction that already happened (loaded from the
      * database), keeping its original timestamp instead of "now".
      * Does not touch the balance, since the balance loaded from the
      * database is already correct.
      */
+=======
+>>>>>>> SanMakara
     public void loadPastTransaction(String type, double amount,
                                      double balanceAfter, LocalDateTime date) {
         transactions.add(new Transaction(type, amount, balanceAfter, date));
@@ -276,7 +294,10 @@ class CheckingAccount extends Account {
         return lastWithdrawDate;
     }
 
+<<<<<<< HEAD
     /** Restores today's withdrawal tracking when loaded from the database. */
+=======
+>>>>>>> SanMakara
     public void restoreDailyState(double withdrawnToday, LocalDate lastWithdrawDate) {
         this.withdrawnToday = withdrawnToday;
         this.lastWithdrawDate = (lastWithdrawDate != null)

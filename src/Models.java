@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 // Plain data-holder classes, combined into one file.
 // No logic was changed - only merged together.
 
+=======
+>>>>>>> SanMakara
 import java.time.LocalDateTime;
 
 class Customer {
@@ -9,7 +12,11 @@ class Customer {
     private String pin;
     private String fullName;
 
+<<<<<<< HEAD
     public Customer(String accountNumber, String pin, String fullName) {
+=======
+    public Customer(String accountNumber,  String pin, String fullName) {
+>>>>>>> SanMakara
         this.accountNumber = accountNumber;
         this.pin = pin;
         this.fullName = fullName;
