@@ -6,7 +6,7 @@ class Customer {
     private String pin;
     private String fullName;
 
-    public Customer(String accountNumber, String pin, String fullName) {
+    public Customer(String accountNumber,  String pin, String fullName) {
         this.accountNumber = accountNumber;
         this.pin = pin;
         this.fullName = fullName;

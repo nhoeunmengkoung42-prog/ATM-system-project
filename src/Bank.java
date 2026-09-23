@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 class Bank {
     private ArrayList<Account> accounts = new ArrayList<>();
     private Connection connection;

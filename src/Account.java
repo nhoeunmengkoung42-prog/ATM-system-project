@@ -10,9 +10,11 @@ abstract class Account {
     private String name;
     private double balance;
 
+
     private int failedAttempts = 0;
     private boolean locked = false;
 
+    
     private ArrayList<Transaction> transactions = new ArrayList<>();
 
     public Account(String accountNumber, String pin,

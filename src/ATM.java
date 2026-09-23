@@ -555,6 +555,7 @@ class ATMSystemInput {
                     continue;
                 }
 
+                
                 return value;
 
             } catch (NumberFormatException e) {
